@@ -4,6 +4,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = require("./routes/users.routes");
+const errorHandler = require("./middleware/errorHandler");
 const port = 4005;
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 
 app.use("/users", router);
 
+app.use(errorHandler);
 mongoose
   .connect(
     "mongodb+srv://sawnjordan:2QRQKBn6mlTzv3ME@cluster0.chmgai6.mongodb.net/Blog?retryWrites=true&w=majority"
