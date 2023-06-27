@@ -18,7 +18,6 @@ mongoose
   )
   .then(app.listen(port))
   .then(() => {
-    console.log(process.env.MONGODB_USERNAME, process.env.MONGODB_PASSWORD);
     console.log(`Server listening to PORT:${port} and connected to DataBase`);
     console.log(`Browser: http://localhost:4005 `);
     console.log(`Press CTRL + C to STOP the server`);
