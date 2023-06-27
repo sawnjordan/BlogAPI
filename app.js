@@ -15,7 +15,7 @@ app.use("/users", router);
 app.use(errorHandler);
 mongoose
   .connect(
-    "mongodb+srv://sawnjordan:2QRQKBn6mlTzv3ME@cluster0.chmgai6.mongodb.net/Blog?retryWrites=true&w=majority"
+    `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.chmgai6.mongodb.net/Blog?retryWrites=true&w=majority`
   )
   .then(app.listen(port))
   .then(() => {
